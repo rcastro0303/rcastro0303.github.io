@@ -1,0 +1,38 @@
+<!-- ABOUT ME -->
+<section id="about" aria-labelledby="about-title">
+  <h2 class="section-title" id="about-title">About Me</h2>
+
+  <div class="about">
+    <!-- Club Involvement -->
+    <div class="about-card">
+      <h3>Club Involvement</h3>
+      <ul>
+        <li><strong>Key Club</strong> – Provided service opportunities and built leadership skills.</li>
+        <li><strong>Barc Club</strong> – Helped care for animals in shelters and learned marine tagging with the University of Miami.</li>
+        <li><strong>International Seakeeper Society</strong> – Promoted oceanographic research, conservation, and education through community outreach.</li>
+      </ul>
+    </div>
+
+    <!-- Sports Involvement -->
+    <div class="about-card">
+      <h3>Sports</h3>
+      <ul>
+        <li><strong>Football</strong> – 2020–2024 (Player of the Week, 3× Academic State Champion).</li>
+        <li><strong>Basketball</strong> – 2019–2023 (Coaches’ Player of the Year).</li>
+        <li><strong>Weightlifting</strong> – 2024–2025 member.</li>
+        <li><strong>Track & Field</strong> – 2024–2025 member.</li>
+      </ul>
+    </div>
+
+    <!-- Service -->
+    <div class="about-card">
+      <h3>Service</h3>
+      <p>I believe in giving back to my community through consistent service. My involvement has included:</p>
+      <ul>
+        <li>Organizing and leading school-wide service events.</li>
+        <li>Volunteering with local shelters and marine science education programs.</li>
+        <li>Mentoring peers and promoting leadership through Key Club initiatives.</li>
+      </ul>
+    </div>
+  </div>
+</section>

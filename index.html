@@ -1,1 +1,132 @@
-<p>Hello World</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Rafael Castro – </title>
+  <meta name="description" content="Personal portfolio – projects, skills, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <a class="brand" href="#home"><span class="dot"></span><span>Rafael Castro</span></a>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="intro-title">
+      <h1 id="intro-title">Hi, I’m <span class="highlight">Rafael Castro</span> — a student building clean, fast websites.</h1>
+      <p>Here you’ll find a few projects I’m proud of, the tools I use, and the best ways to reach me.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#projects">See projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Featured Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Screenshot placeholder of a web app" />
+          <div class="card-body">
+            <h3>Project One</h3>
+            <p>Brief one-liner about what this project does and why it’s cool.</p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Responsive</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Screenshot placeholder of a dashboard" />
+          <div class="card-body">
+            <h3>Project Two</h3>
+            <p>One-liner about the problem it solves, or a cool technical detail.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">APIs</span>
+              <span class="tag">UI</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="Screenshot placeholder of a portfolio" />
+          <div class="card-body">
+            <h3>Project Three</h3>
+            <p>Highlight impact, performance gains, or the stack used.</p>
+            <div class="tags">
+              <span class="tag">Performance</span>
+              <span class="tag">Accessibility</span>
+              <span class="tag">SEO</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 class="section-title" id="about-title">About</h2>
+      <div class="about">
+        <div class="about-card">
+          <p>Write a short bio (3–5 sentences). Mention what you’re learning, technologies you enjoy, and the kind of projects you want to build.</p>
+          <div class="chips" aria-label="Skills">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Git & GitHub</span>
+            <span class="chip">Responsive Design</span>
+          </div>
+        </div>
+        <div class="about-card">
+          <h3>Highlights</h3>
+          <ul>
+            <li>Built a landing page with a 98 Lighthouse score.</li>
+            <li>Cloned a site’s layout to learn CSS Grid + Flexbox.</li>
+            <li>Ship small improvements weekly; automate what you repeat.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <div class="contact">
+        <div class="contact-card">
+          <p>Best way to reach me: <a href="mailto:you@example.com">you@example.com</a></p>
+          <p>Also on <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a> and <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Your Name. Built with HTML & CSS.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
