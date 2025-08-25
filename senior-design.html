@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Senior Design Project – Rafael Castro</title>
+  <meta name="description" content="Senior Design Project by Rafael Castro" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Cartoon-ish, hand-drawn title font -->
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* PAGE THEME — Regular Show–inspired title card */
+    :root {
+      --nebula1: #2a0d4a; /* deep purple */
+      --nebula2: #5b1a77; /* magenta-purple */
+      --nebula3: #101221; /* space blue/black */
+      --nebulaHot: #b63a8f; /* bright magenta */
+      --nebulaBlue: #3b6fe8; /* electric blue */
+    }
+
+    body {
+      background:
+        radial-gradient(1200px 600px at 80% -10%, color-mix(in oklab, var(--nebulaBlue), transparent 80%), transparent 60%),
+        radial-gradient(900px 500px at 10% 10%, color-mix(in oklab, var(--nebulaHot), transparent 75%), transparent 55%),
+        radial-gradient(1200px 700px at 20% 110%, color-mix(in oklab, #7b3ea9, transparent 75%), transparent 60%),
+        linear-gradient(180deg, var(--nebula1), var(--nebula2) 40%, var(--nebula3));
+      color: var(--text);
+    }
+
+    /* faint star field + film grain */
+    .space {
+      position: relative;
+      padding: 5rem 0 2.5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    .space::before,
+    .space::after {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+    }
+    /* stars */
+    .space::before {
+      background-image:
+        radial-gradient(#ffffffcc 1px, transparent 1px),
+        radial-gradient(#ffffff88 1px, transparent 1px),
+        radial-gradient(#ffffff66 1px, transparent 1px);
+      background-size: 3px 3px, 5px 5px, 7px 7px;
+      background-position: 0 0, 1px 2px, 2px 1px;
+      opacity: .35;
+      mix-blend-mode: screen;
+    }
+    /* grain */
+    .space::after {
+      background-image: url("data:image/svg+xml;utf8,\
+        <svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'>\
+          <filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter>\
+          <rect width='100%' height='100%' filter='url(%23n)' opacity='0.08'/>\
+        </svg>");
+      opacity: .8;
+      mix-blend-mode: overlay;
+    }
+
+    /* TITLE CARD */
+    .rs-title {
+      font-family: "Chewy", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: clamp(2.4rem, 6vw + 1rem, 4.2rem);
+      text-align: center;
+      margin: 0 0 .4rem 0;
+      color: #fff;
+      /* chunky dark outline using layered text-shadow */
+      text-shadow:
+        0 2px 0 #0c0c16,
+        0 4px 0 #0c0c16,
+        2px 0 0 #0c0c16,
+        -2px 0 0 #0c0c16,
+        0 0 18px rgba(255,255,255,.15);
+      letter-spacing: .5px;
+    }
+    .rs-sub {
+      text-align: center;
+      color: #e7e9f5;
+      opacity: .9;
+      margin: 0 0 1.2rem 0;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .95rem;
+    }
+    .hero-actions { display:flex; justify-content:center; gap:.8rem; flex-wrap:wrap; }
+
+    /* CONTENT SECTIONS */
+    .panel {
+      background: color-mix(in oklab, var(--card), black 8%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+    .grid-2 { display:grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 900px){ .grid-2 { grid-template-columns: 1.15fr .85fr; } }
+
+    .section-gap { padding: 2rem 0; }
+    .gallery img { aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); border:1px solid var(--border); }
+    .badgebar { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .badge { font-size:.85rem; padding:.3rem .6rem; border-radius:999px; border:1px solid var(--border); background: var(--surface); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <a class="brand" href="index.html#home"><span class="dot" aria-hidden="true"></span><span>Rafael Castro</span></a>
+        <div class="nav-links">
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- TITLE CARD -->
+    <section class="space" aria-labelledby="title">
+      <h1 id="title" class="rs-title">Senior Design Project</h1>
+      <p class="rs-sub">Created by Rafael Castro</p>
+      <div class="hero-actions">
+        <a class="btn" href="index.html#projects">← Back</a>
+        <a class="btn btn-primary" href="#overview">Overview</a>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="section-gap">
+      <div class="grid-2">
+        <article class="panel">
+          <h2 class="section-title">Overview</h2>
+          <p>
+            A themed page inspired by the Regular Show title-card look: cosmic purples,
+            faint stars, and bold hand-drawn lettering. Built with semantic HTML and your
+            portfolio components, optimized for responsiveness and readability.
+          </p>
+          <div class="chips" aria-label="Tech">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">Responsive</span>
+            <span class="chip">Accessibility</span>
+          </div>
+
+          <h3>Goals</h3>
+          <ul>
+            <li>Match the show’s title-card vibe without images, using CSS only.</li>
+            <li>Keep styles maintainable (variables, reusable components).</li>
+            <li>Strong contrast and keyboard-friendly navigation.</li>
+          </ul>
+        </article>
+
+        <aside class="panel">
+          <h3>Meta</h3>
+          <div class="badgebar">
+            <span class="badge">Role: Frontend</span>
+            <span class="badge">Scope: Themed Page</span>
+            <span class="badge">Year: <span id="yr"></span></span>
+          </div>
+          <h4 style="margin-top:1rem;">Quick Links</h4>
+          <ul>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#docs">Docs & Downloads</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section-gap">
+      <h2 class="section-title">Gallery</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop" alt="Purple star field" />
+          <div class="card-body">
+            <h3>Title Card Mood</h3>
+            <p>High-contrast lettering over a nebula-like background.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1451188502541-13943edb6acb?q=80&w=1600&auto=format&fit=crop" alt="Abstract nebula colors" />
+          <div class="card-body">
+            <h3>Cosmic Palette</h3>
+            <p>Magenta, violet, and deep blue gradients with soft grain.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DOCS -->
+    <section id="docs" class="section-gap">
+      <h2 class="section-title">Docs & Downloads</h2>
+      <div class="contact">
+        <div class="contact-card">
+          <p><a class="btn" href="senior-design-brief.pdf" target="_blank" rel="noopener">Project Brief (PDF)</a></p>
+          <p><a class="btn" href="senior-design-report.pdf" target="_blank" rel="noopener">Final Report (PDF)</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="footYear"></span> Rafael Castro. Built with HTML & CSS.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('footYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

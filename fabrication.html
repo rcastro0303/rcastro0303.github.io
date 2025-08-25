@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Fabrication Projects – Rafael Castro</title>
+  <meta name="description" content="Ninja Turtle–themed gallery of fabrication projects by Rafael Castro" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Comic, bold vibe for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ===== Ninja Turtle Theme (page-specific) ===== */
+    :root {
+      --tmnt-green: #0f6d27;
+      --tmnt-green-dark: #0b501c;
+      --tmnt-sewer: #0a0f0a;
+      --mask-blue: #1e6cff;
+      --mask-purple: #7b3ff2;
+      --mask-red: #e23b3b;
+      --mask-orange: #ff7a18;
+    }
+
+    body {
+      /* Sewer-green gradient w/ faint brick pattern overlay */
+      background:
+        radial-gradient(1200px 700px at 85% -10%, #1e6cff18, transparent 55%),
+        radial-gradient(1000px 600px at 10% 0%, #7b3ff218, transparent 60%),
+        linear-gradient(180deg, var(--tmnt-green) 0%, var(--tmnt-green-dark) 70%, var(--tmnt-sewer) 100%);
+      color: var(--text);
+    }
+
+    .tmnt-hero {
+      position: relative;
+      padding: 4.5rem 0 2.2rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    /* brick pattern + grime */
+    .tmnt-hero::before, .tmnt-hero::after {
+      content: "";
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .tmnt-hero::before {
+      background-image:
+        repeating-linear-gradient(transparent 0 28px, #0000001a 28px 29px),
+        repeating-linear-gradient(90deg, transparent 0 58px, #00000014 58px 59px);
+      mix-blend-mode: overlay; opacity:.35;
+    }
+    .tmnt-hero::after {
+      background-image: radial-gradient(#ffffff0f 1px, transparent 1px);
+      background-size: 6px 6px;
+      mix-blend-mode: screen; opacity:.15;
+    }
+
+    .tmnt-title {
+      font-family: "Bangers", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      text-align: center;
+      font-size: clamp(2.2rem, 5vw + 1rem, 4rem);
+      letter-spacing: .8px;
+      color: #fff;
+      margin: 0 0 .25rem 0;
+      text-shadow:
+        0 2px 0 #0a0a0a,
+        0 4px 0 #0a0a0a,
+        0 0 18px rgba(0,0,0,.35);
+    }
+    .tmnt-sub {
+      text-align: center;
+      color: #dff6e3;
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .band-row {
+      display:flex; justify-content:center; gap:.5rem; margin:.75rem 0 0 0;
+    }
+    .band {
+      height: 10px; width: 58px; border-radius: 8px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.35);
+    }
+    .band.blue { background: var(--mask-blue); }
+    .band.purple{ background: var(--mask-purple); }
+    .band.red   { background: var(--mask-red); }
+    .band.orange{ background: var(--mask-orange); }
+
+    /* Project list */
+    .project-list { display:grid; gap: 1rem; margin-top: 1rem; }
+    .project-item {
+      display:flex; justify-content:space-between; align-items:center; gap:1rem;
+      background: color-mix(in oklab, var(--card), black 10%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .project-name {
+      display:flex; align-items:center; gap:.6rem; font-weight:700;
+    }
+    .mask-dot {
+      width: 12px; height: 12px; border-radius: 999px; box-shadow: 0 0 0 4px #00000022 inset;
+    }
+    .mask-blue   { background: var(--mask-blue); }
+    .mask-purple { background: var(--mask-purple); }
+    .mask-red    { background: var(--mask-red); }
+    .mask-orange { background: var(--mask-orange); }
+    .project-link {
+      text-decoration:none; font-weight:700;
+      border:1px solid var(--border); padding:.55rem .8rem; border-radius:12px;
+      background: var(--surface); color: var(--text);
+    }
+    .project-link:hover { transform: translateY(-1px); }
+
+    .btnbar { display:flex; justify-content:center; gap:.8rem; flex-wrap:wrap; margin-top:1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <a class="brand" href="index.html#home"><span class="dot" aria-hidden="true"></span><span>Rafael Castro</span></a>
+        <div class="nav-links">
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="tmnt-hero" aria-labelledby="title">
+      <h1 id="title" class="tmnt-title">Mini Fabrication Projects</h1>
+      <p class="tmnt-sub">Cowabunga! A collection of builds & processes</p>
+      <div class="band-row" aria-hidden="true">
+        <span class="band blue"></span>
+        <span class="band purple"></span>
+        <span class="band red"></span>
+        <span class="band orange"></span>
+      </div>
+      <div class="btnbar">
+        <a class="btn" href="index.html#projects">← Back to Projects</a>
+      </div>
+    </section>
+
+    <!-- PROJECTS LIST -->
+    <section aria-labelledby="plist" style="padding:2rem 0;">
+      <h2 id="plist" class="section-title">Project Index</h2>
+      <div class="project-list">
+
+        <!-- Computer Controlled Cutting -->
+        <div class="project-item">
+          <div class="project-name">
+            <span class="mask-dot mask-blue" aria-hidden="true"></span>
+            <span>Computer Controlled Cutting</span>
+          </div>
+          <a class="project-link" href="https://your-link.com/computer-controlled-cutting" target="_blank" rel="noopener">View</a>
+        </div>
+
+        <!-- Embedded Programming -->
+        <div class="project-item">
+          <div class="project-name">
+            <span class="mask-dot mask-purple" aria-hidden="true"></span>
+            <span>Embedded Programming</span>
+          </div>
+          <a class="project-link" href="https://your-link.com/embedded-programming" target="_blank" rel="noopener">View</a>
+        </div>
+
+        <!-- 3D Scanning -->
+        <div class="project-item">
+          <div class="project-name">
+            <span class="mask-dot mask-red" aria-hidden="true"></span>
+            <span>3D Scanning</span>
+          </div>
+          <a class="project-link" href="https://your-link.com/3d-scanning" target="_blank" rel="noopener">View</a>
+        </div>
+
+        <!-- Computer-Controlled Machining -->
+        <div class="project-item">
+          <div class="project-name">
+            <span class="mask-dot mask-orange" aria-hidden="true"></span>
+            <span>Computer-Controlled Machining</span>
+          </div>
+          <a class="project-link" href="https://your-link.com/computer-controlled-machining" target="_blank" rel="noopener">View</a>
+        </div>
+
+        <!-- Electronics Production -->
+        <div class="project-item">
+          <div class="project-name">
+            <span class="mask-dot mask-blue" aria-hidden="true"></span>
+            <span>Electronics Production</span>
+          </div>
+          <a class="project-link" href="https://your-link.com/electronics-production" target="_blank" rel="noopener">View</a>
+        </div>
+
+        <!-- Molding and Casting -->
+        <div class="project-item">
+          <div class="project-name">
+            <span class="mask-dot mask-purple" aria-hidden="true"></span>
+            <span>Molding and Casting</span>
+          </div>
+          <a class="project-link" href="https://your-link.com/molding-and-casting" target="_blank" rel="noopener">View</a>
+        </div>
+
+        <!-- Wildcard -->
+        <div class="project-item">
+          <div class="project-name">
+            <span class="mask-dot mask-red" aria-hidden="true"></span>
+            <span>Wildcard</span>
+          </div>
+          <a class="project-link" href="https://your-link.com/wildcard" target="_blank" rel="noopener">View</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Rafael Castro. Built with HTML & CSS.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
